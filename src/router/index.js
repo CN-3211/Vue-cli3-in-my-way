@@ -23,6 +23,11 @@ export default new VueRouter({
       path: '/todoList',
       name: 'todoList',
       component: () => import(/* webpackChunkName: "about" */ '~views/todoList.vue')
+    },
+    {
+      path: '/formSubmit',
+      name: 'formSubmit',
+      component: () => import(/* webpackChunkName: "about" */ '~views/formSubmit.vue')
     }
   ]
 })

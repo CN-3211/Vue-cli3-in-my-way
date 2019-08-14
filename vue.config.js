@@ -56,12 +56,20 @@ module.exports = {
     // open: true,
     proxy: {
       '/url': {
-        target: 'http://115.236.68.205:8080/',
+        target: 'http://jsonplaceholder.typicode.com/',
         changeOrigin: true,
         ws: true,
         pathRewrite: {
           '^/url': ''
         }
+      },
+      '/api': {
+        target: 'http://iamzj.cn:8080',
+        changeOrigin: true
+        // ws: true,
+        // pathRewrite: {
+        //   '^/api': ''
+        // }
       }
     }
   },

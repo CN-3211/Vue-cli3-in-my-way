@@ -1,6 +1,5 @@
 <template>
   <div class="todoList">
-    <router-link class="mr-2" to="/formSubmit" tag="a">跳转到form页面</router-link>
     <el-input class="width-400" v-model="inputData" placeholder="请输入待办事项" type=""></el-input>
     {{inputData}}
     <el-button @click="handleAddClick()">添加待办</el-button>

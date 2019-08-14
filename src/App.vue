@@ -1,9 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/todoList">TodoList</router-link>
+      <el-row :gutter="20">
+        <el-col :span="6"><router-link to="/">Home</router-link></el-col>
+        <el-col :span="6"><router-link to="/about">About</router-link></el-col>
+        <el-col :span="6"><router-link to="/todoList">TodoList</router-link></el-col>
+        <el-col :span="6"><router-link to="/formSubmit">formSubmit</router-link></el-col>
+      </el-row>
     </div>
     <router-view/>
   </div>

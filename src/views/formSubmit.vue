@@ -9,22 +9,26 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
+import { getFake } from '../api/getFake';
 export default {
   data () {
     return {
-      list: {}
+      list: [],
+      dataFake: []
     }
   },
   beforeMount () {
-    this.getlist()
+    
+    this.setFake({userId:1})
   },
   methods: {
-    getlist () {
-      axios.get('api/article/?format=json').then(res => {
-        if (res.status === 200) {
-          this.list = res.data
-        }
+    setFake(params) {
+      getFake(params).then( data => {
+        this.dataFake = data;
+        this.dataFake.forEach(item => {
+          this.list.push(Object.keys)  
+          console.log('this.list :', this.list);
+        })
       })
     }
   }
