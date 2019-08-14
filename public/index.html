@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <!-- 使用CDN加速的CSS文件，配置在vue.config.js下 -->
-    <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.css) { %>
+    <!-- <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.css) { %>
       <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="preload" as="style">
       <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet">
-    <% } %>
+    <% } %> -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/element-ui/2.11.1/theme-chalk/index.css">
     <title>simple-vue-webpack</title>
   </head>
   <body>
@@ -18,9 +19,11 @@
     </noscript>
     <div id="app"></div>
     <!-- 使用CDN加速的JS文件，配置在vue.config.js下 -->
-    <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
+    <!-- <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
       <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
-    <% } %>
+    <% } %> -->
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/element-ui/2.11.1/index.js"></script>
     <!-- built files will be auto injected -->
   </body>
 </html>

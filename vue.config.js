@@ -5,7 +5,9 @@ const externals = {
   'vue-router': 'VueRouter',
   'vuex': 'Vuex',
   'axios': 'axios',
-  'echarts': 'echarts'
+  'echarts': 'echarts',
+  // 'element-ui': 'ElementUI'
+  'element-ui': 'ELEMENT'
 }
 
 const cdn = {
@@ -21,6 +23,7 @@ const cdn = {
       'https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js',
       'https://cdn.bootcss.com/axios/0.18.0/axios.min.js',
       'https://cdn.bootcss.com/echarts/4.2.1/echarts.min.js'
+      // 'https://cdn.bootcss.com/element-ui/2.11.1/index.js'
     ]
   }
 }
