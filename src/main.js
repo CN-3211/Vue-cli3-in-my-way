@@ -4,14 +4,14 @@ import router from './router'
 import store from './store'
 // import './registerServiceWorker'
 
-// 插件
-import './plugins';
-
 // 指令
 import './directives';
 
 // 过滤器
 import './filters';
+
+// 插件
+import './plugins';
 
 Vue.config.productionTip = false
 

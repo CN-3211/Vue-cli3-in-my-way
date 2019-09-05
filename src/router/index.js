@@ -28,6 +28,11 @@ export default new VueRouter({
       path: '/formSubmit',
       name: 'formSubmit',
       component: () => import(/* webpackChunkName: "about" */ '~views/formSubmit.vue')
+    },
+    {
+      path: '/ref',
+      name: 'ref',
+      component: () => import(/* webpackChunkName: "about" */ '~views/refTrans/firstRef')
     }
   ]
 })
