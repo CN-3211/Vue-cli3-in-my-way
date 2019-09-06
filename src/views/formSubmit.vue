@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import { getFake } from '../api/getFake';
+import { getFakeJson } from '~api';
 export default {
   data () {
     return {
@@ -18,20 +18,20 @@ export default {
       value: []
     }
   },
-  beforeMount () {
-    
-    this.setFake({userId:1})
+  async mounted () {
+    let data = await getFakeJson()
+    console.log('data :', data);
   },
   methods: {
-    setFake(params) {
-      getFake(params).then( data => {
-        this.dataFake = data;
-        this.dataFake.forEach(item => {
-          this.list.push(Object.keys)  
-          console.log('this.list :', this.list);
-        })
-      })
-    }
+    // setFake(params) {
+    //   getFake(params).then( data => {
+    //     this.dataFake = data;
+    //     this.dataFake.forEach(item => {
+    //       this.list.push(Object.keys)  
+    //       console.log('this.list :', this.list);
+    //     })
+    //   })
+    // }
   }
 }
 </script>

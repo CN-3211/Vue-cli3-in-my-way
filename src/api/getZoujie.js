@@ -1,3 +1,3 @@
-import { get } from './axios/helper';
+// import { get } from './axios/helper';
 
-export const getZoujie = get('article/?format=json');
+// export const getZoujie = get('article/?format=json');
