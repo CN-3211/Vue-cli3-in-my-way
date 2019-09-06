@@ -14,12 +14,15 @@
 </template>
 
 <style lang="scss">
+@import "./style/index.scss";
+html, body {
+  overflow: hidden;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-width: 1280px;
+  height: 100%;
+  overflow: hidden;
   text-align: center;
-  color: #2c3e50;
 }
 #nav {
   padding: 30px;

@@ -65,7 +65,8 @@ export default {
     font-size: 16px;
     border-color: #D8D8D8 !important;
     .cell {
-      color:rgba(0,0,0,0.65);
+      // color:rgba(0,0,0,0.65);
+      color: red;
     }
   }
   .el-table__body-wrapper .cell {
