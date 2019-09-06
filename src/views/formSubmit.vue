@@ -1,6 +1,6 @@
 <template>
   <div class="formSubmit">
-    <el-table border :data="tableData" stripe>
+    <el-table v-loading="loading" border :data="tableData" stripe>
       <el-table-column v-for="col in columns"
         :prop="col.id"
         :key="col.id"
@@ -8,7 +8,7 @@
         :width="col.width">
       </el-table-column>
     </el-table>
-    
+    <el-button @click="handleClick" type="primary">获取表格数据</el-button>
   </div>
 </template>
 <script>
@@ -32,20 +32,26 @@ export default {
     this.columns = columns;
     return {
       tableData: [],
+      loading: false
     }
   },
-  async mounted () {
-    let data = await getFakeJson({userId: 1});
-    console.log('data :', data);
-    data.forEach(item => {
-      const { id, title } = item;
-      console.log('item :', id, title);
-      this.tableData.push({
-        first: id,
-        second: title
+  methods: {
+    async handleClick() {
+      this.loading = true;
+      let data = await getFakeJson({userId: 1}).catch(res => {
+        this.$message.warning('暂无数据');
+        this.loading = false;
+        console.log('res :', res);
       })
-    })
-    console.log('data :', data);
+      data.forEach(item => {
+        const { id, title } = item;
+        this.tableData.push({
+          first: id,
+          second: title
+        })
+      })
+      this.loading = false;
+    }
   }
 }
 </script>

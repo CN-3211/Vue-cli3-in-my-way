@@ -132,8 +132,8 @@ export const BASE_URL = process.env.VUE_APP_BASE_URL;
 
 export const instance = axios.create({
   baseURL: BASE_URL,
-  headers: {
-    "content-type": "application/json; charset=UTF-8"
-  },
+  // headers: {
+  //   "content-type": "application/json; charset=UTF-8"
+  // },
   withCredentials: false
 })
