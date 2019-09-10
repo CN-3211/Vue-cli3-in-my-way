@@ -17,6 +17,13 @@
       <el-checkbox label="userId4"></el-checkbox>
       <el-checkbox label="userId5"></el-checkbox>
     </el-checkbox-group>
+    <el-checkbox-group @change="handleMulFilter" v-model="idList">
+      <el-checkbox label="id1"></el-checkbox>
+      <el-checkbox label="id2"></el-checkbox>
+      <el-checkbox label="id3"></el-checkbox>
+      <el-checkbox label="id4"></el-checkbox>
+      <el-checkbox label="id5"></el-checkbox>
+    </el-checkbox-group>
   </div>
 </template>
 <script>
@@ -44,21 +51,33 @@ const mulMap = {
   userId5: 'userId=5'
 };
 
+const mulIdMap = {
+  id1: 'id=1',
+  id2: 'id=2',
+  id3: 'id=3',
+  id4: 'id=4',
+  id5: 'id=5'
+};
+
 export default {
   data () {
     this.columns = columns;
     return {
       tableData: [],
       loading: false,
-      checkList: []
+      checkList: [],
+      idList: []
     }
   },
   methods: {
     handleMulFilter() {
       console.log('this.checkList :', this.checkList);
       let params = {userId: 6};
-      let filters = this.checkList.map(item => mulMap[item]).join('&');
-      this.getApi(params, filters);
+      let filters = this.checkList.map(item => mulMap[item]);
+      let filters2 = this.idList.map(item => mulIdMap[item]);
+      let totalArr = [...filters, ...filters2].join('&');
+      console.log('totalArr :', totalArr);
+      this.getApi(params, totalArr);
       console.log('filters :', filters);
     },
     handleFilter() {
