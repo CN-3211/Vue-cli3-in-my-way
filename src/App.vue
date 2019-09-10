@@ -17,11 +17,11 @@
 <style lang="scss">
 @import "./style/index.scss";
 html, body {
-  overflow: hidden;
+  // overflow: hidden;
 }
 #app {
   min-width: 1280px;
-  height: 100%;
+  // height: 100%;
   overflow: hidden;
   text-align: center;
 }

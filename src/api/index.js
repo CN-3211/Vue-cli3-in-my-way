@@ -5,5 +5,5 @@
 import { get } from './helper';
 
 //  export const getFakeJson = (paramsStr,params) => get(`/posts/${paramsStr}`)(params);
-export const getFakeJson = params => get('/posts')(params);
+export const getFakeJson = (params, paramsStr) => get(`/posts?${paramsStr}`)(params);
 // export const getFakeJson = get('/posts');
