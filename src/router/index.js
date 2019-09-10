@@ -13,11 +13,11 @@ export default new VueRouter({
     },
     {
       path: '/about',
+      // 显示在url上
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      // 路由名称
       component: () => import(/* webpackChunkName: "about" */ '~views/About.vue')
+      // 组件路径
     },
     {
       path: '/todoList',
@@ -33,6 +33,11 @@ export default new VueRouter({
       path: '/ref',
       name: 'ref',
       component: () => import(/* webpackChunkName: "about" */ '~views/refTrans/firstRef')
+    },
+    {
+      path: '/autoTimeLine',
+      name: 'autoTimeLine',
+      component: () => import(/* webpackChunkName: "about" */ '~views/autoTimeLine')
     }
   ]
 })
