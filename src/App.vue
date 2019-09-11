@@ -7,6 +7,8 @@
         <el-col :span="6"><router-link to="/todoList">TodoList</router-link></el-col>
         <el-col :span="6"><router-link to="/formSubmit">formSubmit</router-link></el-col>
         <el-col :span="6"><router-link to="/ref">ref</router-link></el-col>
+        <el-col :span="6"><router-link to="/autoTimeLine">autoTimeLine</router-link></el-col>
+        <el-col :span="6"><router-link to="/banner">banner</router-link></el-col>
       </el-row>
     </div>
     <router-view/>
@@ -14,12 +16,15 @@
 </template>
 
 <style lang="scss">
+@import "./style/index.scss";
+html, body {
+  // overflow: hidden;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-width: 1280px;
+  // height: 100%;
+  overflow: hidden;
   text-align: center;
-  color: #2c3e50;
 }
 #nav {
   padding: 30px;

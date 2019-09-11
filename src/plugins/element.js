@@ -1,7 +1,7 @@
 // element配置
 import Vue from 'vue';
 import ELEMENT from 'element-ui';
-
+import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ELEMENT);
 
 Vue.prototype.$notyfy = ELEMENT.Notification;
