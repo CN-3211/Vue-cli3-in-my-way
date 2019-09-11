@@ -38,6 +38,11 @@ export default new VueRouter({
       path: '/autoTimeLine',
       name: 'autoTimeLine',
       component: () => import(/* webpackChunkName: "about" */ '~views/autoTimeLine')
+    },
+    {
+      path: '/banner',
+      name: 'banner',
+      component: () => import(/* webpackChunkName: "about" */ '~views/banner')
     }
   ]
 })
