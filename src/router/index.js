@@ -43,6 +43,11 @@ export default new VueRouter({
       path: '/banner',
       name: 'banner',
       component: () => import(/* webpackChunkName: "about" */ '~views/banner')
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: () => import(/* webpackChunkName: "about" */ '~views/test')
     }
   ]
 })
