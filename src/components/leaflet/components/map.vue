@@ -10,6 +10,21 @@
   import { ICON_DEFAULT } from '../utils';
   
   export default {
-    
+    data() {
+      return {
+        id: 'map',
+        ready: false
+      }
+    },
+    mounted() {
+      this.layer = map('map',  {
+        center: [31, 120],
+        zoom: 13
+      });
+      this.$nextTick(() => {
+        this.ready = true;
+        this.$emit('loaded')
+      })
+    }
   }
 </script>
