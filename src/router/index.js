@@ -48,6 +48,11 @@ export default new VueRouter({
       path: '/test',
       name: 'test',
       component: () => import(/* webpackChunkName: "about" */ '~views/test')
+    },
+    {
+      path: '/chimee/origin',
+      name: 'chimeeOrigin',
+      component: () => import(/* webpackChunkName: "about" */ '~views/chimee/chimeeOrigin')
     }
   ]
 })
