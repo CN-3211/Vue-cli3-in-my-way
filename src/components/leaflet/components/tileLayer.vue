@@ -25,6 +25,9 @@ export default {
     this.$nextTick(() => {
       this.$emit('loaded')
     })
+  },
+  render(h) {
+    return null
   }
 }
 </script>
