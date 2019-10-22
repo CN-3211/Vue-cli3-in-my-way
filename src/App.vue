@@ -10,7 +10,7 @@
         <el-col :span="6"><router-link to="/autoTimeLine">autoTimeLine</router-link></el-col>
         <el-col :span="6"><router-link to="/banner">banner</router-link></el-col>
         <el-col :span="6"><router-link to="/test">test</router-link></el-col>
-        <el-col :span="6"><router-link to="/chimee/origin">chimee</router-link></el-col>
+        <el-col :span="6"><router-link to="/chimee">chimee</router-link></el-col>
       </el-row>
     </div>
     <router-view/>

@@ -50,9 +50,9 @@ export default new VueRouter({
       component: () => import(/* webpackChunkName: "about" */ '~views/test')
     },
     {
-      path: '/chimee/origin',
-      name: 'chimeeOrigin',
-      component: () => import(/* webpackChunkName: "about" */ '~views/chimee/chimeeOrigin')
+      path: '/chimee',
+      name: 'chimee',
+      component: () => import(/* webpackChunkName: "about" */ '~views/chimee/chimee')
     }
   ]
 })
