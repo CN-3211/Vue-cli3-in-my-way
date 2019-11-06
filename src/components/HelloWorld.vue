@@ -1,60 +1,80 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa" target="_blank" rel="noopener">pwa</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-mocha" target="_blank" rel="noopener">unit-mocha</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div class="wrap">
+    <el-row>
+      <el-col v-for="{ id, zoomMethod, moveMethod, mapInstance } in mapGroup" :key="id" :span="12">
+        <LMap @zoomanim="zoomParams => getZoomMethod(zoomParams, zoomMethod)" @move="moveParams => getMoveMethod(moveParams, moveMethod, id)" @loaded="layer => getMapInstance(layer, mapInstance)" :id="id" class="full-width height-800">
+          <LTileLayer></LTileLayer>
+        </LMap>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
+import LMap from './leaflet/components/map';
+import LTileLayer from './leaflet/components/tileLayer';
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  data() {
+    return {
+      mapGroup: [
+        { id: 'id1', zoomMethod: 'zMethod1', moveMethod: 'mMethod1', mapInstance: 'instance1' },
+        { id: 'id2', zoomMethod: 'zMethod2', moveMethod: 'mMethod2', mapInstance: 'instance2' }
+      ]
+    }
+  },
+  methods: {
+    //  利用下面方式将v-for循环出来的内容绑定不同function
+    getMapInstance(layer, mapInstance) {
+      this[mapInstance](layer);
+    },
+    getZoomMethod(params, zoomMethod) {
+      this[zoomMethod](params);
+    },
+    getMoveMethod(params, moveMethod, id) {
+      console.log('id :', id);
+      // console.log('params :', params.target.getCenter());
+      this[moveMethod](params);
+      // this.mapInstance2.setView([30,120])
+      // this.mapInstance2.setView(this.movePoint1);
+    },
+    //  缩放和移动事件
+    zMethod1(params) {
+      let centerPoint = params.target.getZoom();
+    },
+    mMethod1(params) {
+      this.movePoint1 = params.target.getCenter();
+      // console.log('params1 :', this.movePoint1);
+    },
+    zMethod2(params) {
+      console.log('params3 :', params);
+    },
+    mMethod2(params) {
+      this.movePoint2 = params.target.getCenter();
+      console.log('params22 :', this.movePoint2);
+    },
+    // 存储instance
+    instance1(layer) {
+      this.mapInstance1 = layer;
+    },
+    instance2(layer) {
+      this.mapInstance2 = layer;
+;    },
+    mapOneMove(move) {
+    },
+    mapOneZoom(zoom, id) {
+      if(id === 'id1') {
+        
+      }
+      // console.log('zoom :', zoom);
+    }
+  },
+  components: {
+    LMap,
+    LTileLayer
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style>
+
 </style>
