@@ -12,6 +12,7 @@ module.exports = {
       children: [
         ['/blog/JavaScript/JavaScript对象操作方法------删除一个键值对', 'Object删除键值对'],
         ['/blog/JavaScript/解构赋值多种用法', '解构赋值多种用法'],
+        ['/blog/JavaScript/http请求错误码', 'http请求错误码']
       ]
     }
   ],

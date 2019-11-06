@@ -5,11 +5,11 @@ const obj = {
     example1: 'exa',
     example2: 'exa2'
 }
-Obj.assign({}, obj, example1 = 'exa3')
-// 改变obj里面的example2的值，效率更高
+let obj2 = Obj.assign({}, obj, example1 = 'exa3')
+// 浅克隆的方式改变obj里面的example2的值，并赋值给新对象obj2，不会改变原来的对象
 Object.freeze(obj)
-// 冻结vue给对象添加的set和get方法，一般在return内使用，对象冻结了之后，
-// 除非通过Object.assign改变对象的值，否则通过obj.example1的方式改变对象的值不起作用，无法让视图同步更新
+// 冻结vue给对象添加的set和get方法，对象冻结了之后，通过obj.example1 = newValue不能改变对象的值
+// 但是可以通过Object.assign浅克隆对象
 ```
 
 除了以上两种方法可以对数据进行优化以外，还能能把数据直接写在return的外面，data的里面
@@ -17,20 +17,17 @@ Object.freeze(obj)
 ```javascript
 export default {
     data() {
-        this.dataJs = '仅能用于在js中处理数据，相当于var了一个变量，不能用在template里'
+        this.dataJs = '在return外面data里面定义的数据'
+        // vue不会给他添加set和get的监听方法，同时这里的数据也可以在template中显         示，但是不会同步视图的更新
         return {
-            dataView: '在template同步更新'
+            dataView: '正常定义在return里面的data数据'
+            // 可以在templete中显示，并且可数据改变后视图会同步更新，如果这里的数据			 被Object.freeze后，效果类似于在data里return外声明变量
         }
     }
 }
 ```
 
-写在return外面data里面的数据通常有两种特征
-
-1. 死数据，其值通常不会被改变，例如geoJson画出来的地图数据
-2. 数据可以进行改变，但是只会在**script**标签中间使用，类似var了一个变量，不具有vue里面的数据绑定的特性
-
-
+另外在data外面还可以在method里面任意定义**this.bianliang**使用，这种情况下声明的变量只能在<script></script>中全局使用，和以前的var效果类似
 
 
 
