@@ -1,0 +1,19 @@
+.previewBlur{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.2;
+  background-color: #666666;
+}
+.wrapBlur{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.previewImg {
+  display: block;
+  margin: 12vh auto 0;
+}

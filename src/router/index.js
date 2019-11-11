@@ -45,14 +45,19 @@ export default new VueRouter({
       component: () => import(/* webpackChunkName: "about" */ '~views/banner')
     },
     {
-      path: '/test',
-      name: 'test',
-      component: () => import(/* webpackChunkName: "about" */ '~views/test')
+      path: '/mapboxTest',
+      name: 'mapboxTest',
+      component: () => import(/* webpackChunkName: "about" */ '~views/mapboxTest')
     },
     {
       path: '/chimee',
       name: 'chimee',
       component: () => import(/* webpackChunkName: "about" */ '~views/chimee/chimee')
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: () => import(/* webpackChunkName: "about" */ '~views/test')
     }
   ]
 })
