@@ -1,6 +1,30 @@
-### JavaScript对象操作方法------删除一个键值对
+---
 
+title: 如何删除Object的一个键值对
 
+meta: 
+
+  - name: 如何活用ES6新增的解构赋值
+
+    content: 页面描述（为了SEO）
+
+  - name: keywords
+
+    content: 页面关键词（为了SEO）
+
+date: 2019-11-11（创建日期）
+
+update_date: 2019-11-12（更新日期）
+ 
+tags: 
+
+  - JavaScript
+
+copyright: 博文版权，默认：允许转载，需保留原文链接，著作权归博主所有
+
+---
+
+## JavaScript对象操作方法------删除一个键值对
 
 ```javascript
 const Obj = {

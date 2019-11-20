@@ -1,4 +1,30 @@
-###  Vue数据优化方法之Object
+---
+
+title: 对Objec进行优化
+
+meta: 
+
+  - name: 将变量在不同的位置来优化页面的性能
+
+    content: 页面描述（为了SEO）
+
+  - name: keywords
+
+    content: 页面关键词（为了SEO）
+
+date: 2019-9-16（创建日期）
+
+update_date: 2019-10-28（更新日期）
+ 
+tags: 
+
+  - Vue
+
+copyright: 博文版权，默认：允许转载，需保留原文链接，著作权归博主所有
+
+---
+
+##  Vue数据优化方法之Object
 
 ```javascript
 const obj = {
