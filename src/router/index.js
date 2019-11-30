@@ -55,6 +55,11 @@ export default new VueRouter({
       component: () => import(/* webpackChunkName: "about" */ '~views/chimee/chimee')
     },
     {
+      path: '/directives',
+      name: 'directives',
+      component: () => import(/* webpackChunkName: "about" */ '~views/directives')
+    },
+    {
       path: '/test',
       name: 'test',
       component: () => import(/* webpackChunkName: "about" */ '~views/test')
