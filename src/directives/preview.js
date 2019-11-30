@@ -1,39 +1,38 @@
 import Vue from 'vue';
-import { className } from '_postcss-selector-parser@6.0.2@postcss-selector-parser';
 
 Vue.directive('preview', {
   bind(el, binding) {
-    function previewImg(e) {
-      console.log('el :', el);
+    function previewImg() {
+      // 创建三个div作为容器
       let wrap = document.createElement('div')
-      let div = document.createElement('div')
+      let blur = document.createElement('div')
       let img = document.createElement('img')
-      el.__myDiv__ = div
-      div.setAttribute('class', 'previewBlur')
+
+      el.__blur__ = blur
+      blur.setAttribute('class', 'previewBlur')
       img.src = el.src;
       img.style.width = '400px';
       img.style.height = '400px';
-      console.log('binding :', binding);
-      div.setAttribute('class', 'previewBlur')
+
+      blur.setAttribute('class', 'previewBlur')
       wrap.setAttribute('class', 'wrapBlur')
       img.setAttribute('class', 'previewImg')
       document.body.append(wrap)
-      wrap.append(div)
+      wrap.append(blur)
       wrap.append(img)
-      console.log('e :', e);
-      function divClick() {
+
+      function blurClick() {
         document.body.removeChild(wrap)
-        div.removeEventListener('click', divClick)
+        blur.removeEventListener('click', blurClick)
       }
-      el.__divClick__ = divClick
+      el.__blurClick__ = blurClick
       el.__previewImg__ = previewImg
-      div.addEventListener('click', divClick)
+      blur.addEventListener('click', blurClick)
     }
     el.addEventListener('click', previewImg)
-    // document.addEventListener('click', previewImg)
   },
   unbind(el) {
-    el.__myDiv__.removeEventListener('click', el.__divClick__)
+    el.__blur__.removeEventListener('click', el.__blurClick__)
     el.removeEventListener('click', el.__previewImg__)
   }
 })
