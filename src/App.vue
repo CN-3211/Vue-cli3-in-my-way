@@ -1,3 +1,9 @@
+<!--
+ * @@Author: huangzh873
+ * @Date: 2019-11-06 13:27:08
+ * @LastEditors: huangzh873
+ * @LastEditTime: 2019-12-09 16:58:07
+ -->
 <template>
   <div id="app">
     <div id="nav">
@@ -12,6 +18,9 @@
         <el-col :span="6"><router-link to="/mapboxTest">mapboxTest</router-link></el-col>
         <el-col :span="6"><router-link to="/chimee">chimee</router-link></el-col>
         <el-col :span="6"><router-link to="/directives">directives</router-link></el-col>
+        <el-col :span="6"><router-link to="/tagModel">tagModel</router-link></el-col>
+        <el-col :span="6"><router-link to="/tryCatch">tryCatch</router-link></el-col>
+        <el-col :span="6"><router-link to="/tangle">tangle</router-link></el-col>
         <el-col :span="6"><router-link to="/test">test</router-link></el-col>
       </el-row>
     </div>

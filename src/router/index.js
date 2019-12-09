@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-11-06 13:27:09
+ * @LastEditTime: 2019-12-09 16:57:52
+ * @LastEditors: huangzh873
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue-cli3-in-my-way\src\router\index.js
+ */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '~views/Home.vue'
@@ -58,6 +66,21 @@ export default new VueRouter({
       path: '/directives',
       name: 'directives',
       component: () => import(/* webpackChunkName: "about" */ '~views/directives')
+    },
+    {
+      path: '/tagModel',
+      name: 'tagModel',
+      component: () => import(/* webpackChunkName: "about" */ '~views/modelTags/tagModel')
+    },
+    {
+      path: '/tryCatch',
+      name: 'tryCatch',
+      component: () => import(/* webpackChunkName: "about" */ '~views/tryCatchFinally')
+    },
+    {
+      path: '/tangle',
+      name: 'tangle',
+      component: () => import(/* webpackChunkName: "about" */ '~views/tangle')
     },
     {
       path: '/test',

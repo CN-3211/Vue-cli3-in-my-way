@@ -1,3 +1,8 @@
+<!--
+ * @Date: 2019-11-30 15:28:47
+ * @LastEditors: huangzh873
+ * @LastEditTime: 2019-12-09 16:55:07
+ -->
 <template>
   <div class="tagsGroup">
     <el-tag
@@ -10,7 +15,6 @@
     </el-tag>
   </div>
 </template>
-
 <script>
 export default {
   props: {
