@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-06 13:38:45
- * @LastEditTime: 2019-12-11 11:59:48
+ * @LastEditTime: 2019-12-11 15:28:57
  * @LastEditors: huangzh873
  * @Description: event delegation -- 事件委托
  * @FilePath: \Vue-cli3-in-my-way\src\views\test.vue
@@ -13,6 +13,7 @@
       <li class="list cursor-pointer"><span>list 2</span></li>
       <li class="list cursor-pointer"><span>list 3</span></li>
     </ul>
+    <p>{{clickElement}}</p>
   </div>
 </template>
 
@@ -20,7 +21,7 @@
 export default {
   data() {
     return {
-
+      clickElement: ''
     }
   },
   mounted() {
@@ -31,6 +32,7 @@ export default {
      * @param {_parentNode, _targetName, _event, _hanlder} 
      * @return: 
      */
+    let that = this;
     function delegate(_parentNode, _targetName, _event, _hanlder) {
       _parentNode.addEventListener(_event, function (e) {
         // 判断点击的元素是否有父级元素
@@ -49,7 +51,7 @@ export default {
       })
     }
     delegate(lists, 'LI', 'click', function(e) {
-      console.log('aaaaaa');
+      that.clickElement = '刚刚点击得元素是'+ e.target.innerText;
     })
   }
 }
