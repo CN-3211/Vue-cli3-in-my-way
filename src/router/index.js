@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-06 13:27:09
- * @LastEditTime: 2019-12-09 16:57:52
+ * @LastEditTime: 2019-12-11 12:00:12
  * @LastEditors: huangzh873
  * @Description: In User Settings Edit
  * @FilePath: \Vue-cli3-in-my-way\src\router\index.js
@@ -81,6 +81,11 @@ export default new VueRouter({
       path: '/tangle',
       name: 'tangle',
       component: () => import(/* webpackChunkName: "about" */ '~views/tangle')
+    },
+    {
+      path: '/delegation',
+      name: 'delegation',
+      component: () => import(/* webpackChunkName: "about" */ '~views/delegation')
     },
     {
       path: '/test',

@@ -1,9 +1,9 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-06 13:38:45
- * @LastEditTime: 2019-12-11 11:59:08
+ * @LastEditTime: 2019-12-11 11:59:48
  * @LastEditors: huangzh873
- * @Description: In User Settings Edit
+ * @Description: event delegation -- 事件委托
  * @FilePath: \Vue-cli3-in-my-way\src\views\test.vue
  -->
 <template>
