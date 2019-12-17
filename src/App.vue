@@ -2,7 +2,7 @@
  * @@Author: huangzh873
  * @Date: 2019-11-06 13:27:08
  * @LastEditors: huangzh873
- * @LastEditTime: 2019-12-11 12:00:32
+ * @LastEditTime: 2019-12-16 11:30:21
  -->
 <template>
   <div id="app">
@@ -22,6 +22,7 @@
         <el-col :span="6"><router-link to="/tryCatch">tryCatch</router-link></el-col>
         <el-col :span="6"><router-link to="/tangle">tangle</router-link></el-col>
         <el-col :span="6"><router-link to="/delegation">delegation</router-link></el-col>
+        <el-col :span="6"><router-link to="/jsDataType">jsDataType</router-link></el-col>
         <el-col :span="6"><router-link to="/test">test</router-link></el-col>
       </el-row>
     </div>
