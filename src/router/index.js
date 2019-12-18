@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-06 13:27:09
- * @LastEditTime: 2019-12-16 11:29:55
+ * @LastEditTime: 2019-12-17 15:16:44
  * @LastEditors: huangzh873
  * @Description: In User Settings Edit
  * @FilePath: \Vue-cli3-in-my-way\src\router\index.js
@@ -91,6 +91,16 @@ export default new VueRouter({
       path: '/jsDataType',
       name: 'jsDataType',
       component: () => import(/* webpackChunkName: "about" */ '~views/jsDataType')
+    },
+    {
+      path: '/callApplyBind',
+      name: 'callApplyBind',
+      component: () => import(/* webpackChunkName: "about" */ '~views/callApplyBind')
+    },
+    {
+      path: '/originAjax',
+      name: 'originAjax',
+      component: () => import(/* webpackChunkName: "about" */ '~views/originAjax')
     },
     {
       path: '/test',
