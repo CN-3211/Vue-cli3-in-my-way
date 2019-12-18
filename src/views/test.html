@@ -2,7 +2,7 @@
  * @Author: huangzh873
  * @Date: 2019-12-16 13:59:06
  * @LastEditors: huangzh873
- * @LastEditTime: 2019-12-16 14:01:29
+ * @LastEditTime: 2019-12-17 15:14:12
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -12,15 +12,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script>
-    function person(age) {
-      this.age = age;
-      console.log('this :', this);
-      return {age: age}
+    var __ajax = new XMLHttpRequest()
+    // 当请求为异步的时候可以用onreadystatechange
+    __ajax.onreadystatechange = function () {
+      console.log('__ajax1 :', __ajax.readyState);
+      console.log('__ajax2 :', __ajax.status);
     }
-    var person1 = person(22);
-    var person2 = new person(18)
-    console.log('person1', person1);
-    console.log('person2 :', person2);
+    __ajax.open('GET', "https://jsonplaceholder.typicode.com/posts/1", true)
+    __ajax.send()
+
+    // 若请求为同步的，直接把要执行的内容放在send()后面即可
+    
+    console.log('__ajax :', __ajax);
   </script>
 </head>
 <body>
