@@ -1,8 +1,8 @@
 <!--
  * @@Author: huangzh873
  * @Date: 2019-11-06 13:27:08
- * @LastEditors: huangzh873
- * @LastEditTime: 2019-12-17 15:25:53
+ * @LastEditors  : huangzh873
+ * @LastEditTime : 2019-12-25 15:08:46
  -->
 <template>
   <div id="app">
@@ -25,6 +25,7 @@
         <el-col :span="6"><router-link to="/jsDataType">jsDataType</router-link></el-col>
         <el-col :span="6"><router-link to="/callApplyBind">callApplyBind</router-link></el-col>
         <el-col :span="6"><router-link to="/originAjax">originAjax</router-link></el-col>
+        <el-col :span="6"><router-link to="/slotContainer">slotContainer</router-link></el-col>
         <el-col :span="6"><router-link to="/test">test</router-link></el-col>
       </el-row>
     </div>
