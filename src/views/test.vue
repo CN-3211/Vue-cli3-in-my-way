@@ -1,10 +1,8 @@
-<template>
-  
-</template>
-
 <script>
 export default {
-
+  render(h) {
+    console.log('h :', h());
+  }
 }
 </script>
 
