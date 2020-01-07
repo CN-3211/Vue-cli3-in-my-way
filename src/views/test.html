@@ -2,7 +2,7 @@
  * @Author: huangzh873
  * @Date: 2019-12-16 13:59:06
  * @LastEditors  : huangzh873
- * @LastEditTime : 2019-12-25 14:39:08
+ * @LastEditTime : 2020-01-06 17:08:14
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -11,14 +11,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="../style/index.scss">
+  <style>
+    :root {
+      font-size: 62.5%;
+    }
+    .test1{
+      font-size: 1em;
+      height: 100px;
+      width: 40%;
+      display: inline-block;
+      background-color: red;
+      margin-bottom: 1em;
+      margin-right: 1rem;
+    }
+    .test2{
+      height: 100px;
+      width: 40%;
+      display: inline-block;
+      background-color: blue;
+    }
+    .aaa{
+      height: 200px;
+    }
+  </style>
   
 </head>
 <body>
-  <div id="div1" class="divClass" title="divTitle" title1="divTitle1"></div>
-  <p><img src="data:image/jpeg;base64,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">sssss</p><p>aaaa</p>
+  <div >
+    <div class="test1">111</div>
+    <div class="test2">222</div>
+    <div class="imglist">
+      <img width="200" class="aaa" src="http://dmimg.5054399.com/allimg/pkm/pk/22.jpg" alt="">
+    </div>
+    <img width="200" class="aaa" src="http://dmimg.5054399.com/allimg/pkm/pk/22.jpg" alt="">
 </body>
 <script>
-  var in1=document.getElementById("div1");
-  console.log([in1]);
+  console.log([document.getElementsByClassName('aaa')[0]])
+  let arr = [];
+  let wrap = document.getElementsByClassName('imglist')[0];
+  let img = new Image();
+  img.src = 'http://dmimg.5054399.com/allimg/pkm/pk/22.jpg';
+
+  imglist.appendChild(img);
+
+
+  function test1(params) {
+    return new Promise((resolve) => {
+      // setTimeout(resolve, params);
+      setTimeout(() => {
+        console.log(params);
+        resolve()
+      }, 1000);
+    })
+  }
+  (async function() {
+    for(var i = 0; i < 5; i++) {
+      let aaa = await test1(i)
+    }
+    console.log('params :', i);
+  })()
+  // for(var i = 0; i < 5; i++) {
+  //   test1(i)
+  // }
+  // Promise.all(arr).then(() => {
+  //   console.log('params :', i);
+  //   console.log('asd');
+  // })
 </script>
 </html>
