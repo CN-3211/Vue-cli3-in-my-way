@@ -1,3 +1,9 @@
+/*
+ * @Author: huangzh873
+ * @Date: 2019-09-21 23:20:58
+ * @LastEditors  : huangzh873
+ * @LastEditTime : 2020-02-03 09:39:04
+ */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'

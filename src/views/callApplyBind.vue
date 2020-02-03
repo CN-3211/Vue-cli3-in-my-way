@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-06 13:38:45
- * @LastEditTime: 2019-12-17 15:25:12
- * @LastEditors: huangzh873
+ * @LastEditTime : 2020-01-07 09:56:18
+ * @LastEditors  : huangzh873
  * @Description: call和apply还有bind用法
  * @FilePath: \Vue-cli3-in-my-way\src\views\test.vue
  -->
@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import { CLOSING } from 'ws';
 export default {
   data() {
     return {
