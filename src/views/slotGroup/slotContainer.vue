@@ -23,15 +23,16 @@
       </template>
     </SlotedPart1>
     <hr>
-    <!-- 父组件引用子组件的变量 -->
+    <!-- 父组件引用子组件的变量, v-slot:缩写为'#' -->
     <SlotedPart2 class="my-6" v-slot:default="slotProps">
       {{ slotProps.user.sloted }}
     </SlotedPart2>
-    <SlotedPart2 class="my-6" v-slot:default="{ user, user2 }">
+    <SlotedPart2 class="my-6" #default="{ user, user2 }">
       {{ user.sloted2 }}
       {{ user2.sloted }}
     </SlotedPart2>
-    <!-- v-slot缩写为'#' -->
+    <!-- slot只穿数组 -->
+    <NewSlot :myArr="testArr"></NewSlot>
   </div>
 </template>
 
@@ -39,17 +40,20 @@
 import SlotedPart0 from './slotedPart0';
 import SlotedPart1 from './slotedPart1';
 import SlotedPart2 from './slotedPart2';
+import NewSlot from './newSlot';
 
 export default {
   data() {
     return {
-      testData: 'asdddd'
+      testData: 'asdddd',
+      testArr: [1, 2, 3, 4, 5]
     }
   },
   components: {
     SlotedPart0,
     SlotedPart1,
-    SlotedPart2
+    SlotedPart2,
+    NewSlot
   }
 }
 </script>
