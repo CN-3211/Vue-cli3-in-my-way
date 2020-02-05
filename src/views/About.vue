@@ -74,6 +74,7 @@ export default {
     async handleClick() {
       // 点击调用接口
       let param = {userId: 1};
+      let a = null;
       // 接口需要传的参数，例如这里传的就是一个对象{userId: 1}，也可以选择不传
       await axios.get('http://jsonplaceholder.typicode.com/posts', {params: param}).then((res) => {
         // 如果不传参数get后面的括号内容只需要写('http://jsonplaceholder.typicode.com/posts')然后直接.then就可以

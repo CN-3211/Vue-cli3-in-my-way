@@ -20,6 +20,7 @@
       </template>
       <template v-slot:footer>
         <el-button>22222</el-button>
+        <el-button></el-button>
       </template>
     </SlotedPart1>
     <hr>
@@ -32,7 +33,11 @@
       {{ user2.sloted }}
     </SlotedPart2>
     <!-- slot只穿数组 -->
-    <NewSlot :myArr="testArr"></NewSlot>
+    <NewSlot :myArr="testArr">
+      <template #box="{ info }">
+        <div class="box">info: {{info.name}}</div>
+      </template>
+    </NewSlot>
   </div>
 </template>
 
@@ -48,6 +53,9 @@ export default {
       testData: 'asdddd',
       testArr: [1, 2, 3, 4, 5]
     }
+  },
+  mounted() {
+    console.log('father', this.$slots)
   },
   components: {
     SlotedPart0,
