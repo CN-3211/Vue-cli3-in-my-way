@@ -108,6 +108,11 @@ export default new VueRouter({
       component: () => import(/* webpackChunkName: "about" */ '~views/slotGroup/slotContainer')
     },
     {
+      path: '/functionalComp',
+      name: 'functionalComp',
+      component: () => import(/* webpackChunkName: "about" */ '~views/test/index')
+    },
+    {
       path: '/test',
       name: 'test',
       component: () => import(/* webpackChunkName: "about" */ '~views/test')

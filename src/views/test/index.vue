@@ -9,8 +9,8 @@
     <debounce :auth="'AUTN_XXX'">
       <el-input style="width: 50px;" v-model="text">122121211</el-input>
     </debounce> -->
-    <!-- <debounceBtn @click="a">asdasdasd</debounceBtn> -->
-    <debounceBtn2 class="debounce" type="primary" @click="a">12122</debounceBtn2>
+     <debounceBtn @click="a">asdasdasd</debounceBtn>
+<!--    <debounceBtn2 class="debounce" type="primary" @click="a">12122</debounceBtn2>-->
   </div>
 </template>
 
@@ -28,6 +28,7 @@ export default {
   methods: {
     handleInput() {
       console.log(this.text)
+      
     },
     a(e) {
       console.log(1);

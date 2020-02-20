@@ -32,12 +32,14 @@
       {{ user.sloted2 }}
       {{ user2.sloted }}
     </SlotedPart2>
-    <!-- slot只穿数组 -->
+    <!-- 跨组件渲染slot -->
     <NewSlot :myArr="testArr">
       <template #box="{ info }">
         <div class="box">info: {{info.name}}</div>
       </template>
     </NewSlot>
+    <!--  利用prop传slot  -->
+    <FunctionalSlot :slot-default="getDefault()"></FunctionalSlot>
   </div>
 </template>
 
@@ -46,6 +48,7 @@ import SlotedPart0 from './slotedPart0';
 import SlotedPart1 from './slotedPart1';
 import SlotedPart2 from './slotedPart2';
 import NewSlot from './newSlot';
+import FunctionalSlot from "./functionalSlot";
 
 export default {
   data() {
@@ -57,11 +60,17 @@ export default {
   mounted() {
     console.log('father', this.$slots)
   },
+  methods: {
+    getDefault() {
+      return [this.$createElement("p", "这是默认插槽")]
+    }
+  },
   components: {
     SlotedPart0,
     SlotedPart1,
     SlotedPart2,
-    NewSlot
+    NewSlot,
+    FunctionalSlot
   }
 }
 </script>

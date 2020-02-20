@@ -26,6 +26,7 @@
         <el-col :span="6"><router-link to="/callApplyBind">callApplyBind</router-link></el-col>
         <el-col :span="6"><router-link to="/originAjax">originAjax</router-link></el-col>
         <el-col :span="6"><router-link to="/slotContainer">slotContainer</router-link></el-col>
+        <el-col :span="6"><router-link to="/functionalComp">functionalComp</router-link></el-col>
         <el-col :span="6"><router-link to="/test">test</router-link></el-col>
       </el-row>
     </div>
