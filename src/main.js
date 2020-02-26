@@ -19,6 +19,10 @@ import './filters';
 // 插件
 import './plugins';
 
+// 异步报错
+import { to } from './utils/index2';
+
+Vue.prototype.to = to;
 Vue.config.productionTip = false
 
 new Vue({

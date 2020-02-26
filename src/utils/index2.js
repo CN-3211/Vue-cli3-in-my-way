@@ -64,3 +64,9 @@ export function myReduce(fn, init) {
 // }
 // let aaa = reduceArr.myReduce(plusFn, 10); 
 // console.log('aaa :', aaa); // 31
+
+export function to(promise) {
+  return promise.then(data => {
+    return [null, data];
+  }).catch(err => [err])
+}

@@ -90,12 +90,14 @@ export default {
       console.log('params :', params);
       this.loading = true;
       this.tableData = [];
-      let data = await getFakeJson(params, paramsStr).catch(res => {
+      let data; let err;
+      [err, data] = await this.to(getFakeJson(params, paramsStr));
+      console.log('data1509',data);
+      console.log('err1509',err);
+      if(err) {
         this.$message.warning('暂无数据');
         this.loading = false;
-        console.log('res :', res);
-      })
-      console.log('data :', data);
+      }
       data.forEach(item => {
         const { id, title } = item;
         this.tableData.push({
