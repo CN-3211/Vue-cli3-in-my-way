@@ -12,7 +12,7 @@
         <el-col :span="6"><router-link to="/about">About</router-link></el-col>
         <el-col :span="6"><router-link to="/todoList">TodoList</router-link></el-col>
         <el-col :span="6"><router-link to="/formSubmit">formSubmit</router-link></el-col>
-        <el-col :span="6"><router-link to="/ref">ref</router-link></el-col>
+        <el-col :span="6"><router-link to="/update&sync">update&sync</router-link></el-col>
         <el-col :span="6"><router-link to="/autoTimeLine">autoTimeLine</router-link></el-col>
         <el-col :span="6"><router-link to="/banner">banner</router-link></el-col>
         <el-col :span="6"><router-link to="/mapboxTest">mapboxTest</router-link></el-col>

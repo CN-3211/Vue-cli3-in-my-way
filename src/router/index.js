@@ -38,9 +38,9 @@ export default new VueRouter({
       component: () => import(/* webpackChunkName: "about" */ '~views/formSubmit.vue')
     },
     {
-      path: '/ref',
-      name: 'ref',
-      component: () => import(/* webpackChunkName: "about" */ '~views/refTrans/firstRef')
+      path: '/update&sync',
+      name: 'update&sync',
+      component: () => import(/* webpackChunkName: "about" */ '~views/update&sync/originContainer')
     },
     {
       path: '/autoTimeLine',
