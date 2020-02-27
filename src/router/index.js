@@ -116,6 +116,28 @@ export default new VueRouter({
       path: '/test',
       name: 'test',
       component: () => import(/* webpackChunkName: "about" */ '~views/test')
+    },
+    {
+      path: '/router-root/:id',
+      name: 'router-root',
+      component: () => import(/* webpackChunkName: "about" */ '../views/__vue-router/routerRoot'),
+      children: [
+        {
+          path: '',
+          name: 'router-default',
+          component: () => import(/* webpackChunkName: "about" */ '../views/__vue-router/root')
+        },
+        {
+          path: 'red',
+          name: 'router-red',
+          component: () => import(/* webpackChunkName: "about" */ '../views/__vue-router/red')
+        },
+        {
+          path: 'yellow',
+          name: 'router-yellow',
+          component: () => import(/* webpackChunkName: "about" */ '../views/__vue-router/yellow')
+        }
+      ]
     }
   ]
 })

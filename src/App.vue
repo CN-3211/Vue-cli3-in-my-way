@@ -28,14 +28,24 @@
         <el-col :span="6"><router-link to="/slotContainer">slotContainer</router-link></el-col>
         <el-col :span="6"><router-link to="/functionalComp">functionalComp</router-link></el-col>
         <el-col :span="6"><router-link to="/test">test</router-link></el-col>
+        <el-col :span="6"><router-link to="/router-root/testId">嵌套路由-根路由</router-link></el-col>
       </el-row>
     </div>
-    <router-view/>
+    <transition name="fade" mode="out-in">
+      <router-view/>
+    </transition>
+
   </div>
 </template>
 
 <style lang="scss">
 @import "./style/index.scss";
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 html, body {
   // overflow: hidden;
 }
