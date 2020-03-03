@@ -1,25 +1,13 @@
-<!--
- * @Author: huangzh873
- * @Date: 2020-01-07 09:50:53
- * @LastEditors  : huangzh873
- * @LastEditTime : 2020-01-15 09:08:24
- -->
 <template>
-  <div>1</div>
+  <div class="test">
+    <p>123</p>
+<!--    <test v-for="n in 5" :key="n"></test>-->
+  </div>
 </template>
 
 <script>
 export default {
-  mounted() {
-    // function aaa() {
-    //   console.log('this :', this);
-    // }
-    // aaa()
-    (() => {
-      console.log('this :', this);
-      
-    })()
-  }
+  name: 'test'
 }
 </script>
 

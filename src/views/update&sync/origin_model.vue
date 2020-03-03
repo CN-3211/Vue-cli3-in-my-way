@@ -7,8 +7,8 @@
     name: "origin_model",
     props: {
       value: {
-        type: Number,
-        default: 0
+        type: String,
+        default: ''
       }
     },
     data() {
