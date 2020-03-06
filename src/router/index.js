@@ -113,6 +113,11 @@ export default new VueRouter({
       component: () => import(/* webpackChunkName: "about" */ '~views/test/index')
     },
     {
+      path: '/setAndget',
+      name: 'setAndget',
+      component: () => import(/* webpackChunkName: "about" */ '~views/setAndget')
+    },
+    {
       path: '/test',
       name: 'test',
       component: () => import(/* webpackChunkName: "about" */ '~views/test')
