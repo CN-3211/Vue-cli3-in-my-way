@@ -22,6 +22,7 @@ export function debounce(func, wait, immediate) {
   return function() {
     context = this;
     args = arguments;
+    console.log('args',args);
     timestamp = +new Date();
     // 第一次调用该方法时，且immediate为true，则调用func函数
     let callNow = immediate && !timeout;

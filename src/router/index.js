@@ -123,6 +123,11 @@ export default new VueRouter({
       component: () => import(/* webpackChunkName: "about" */ '~views/test')
     },
     {
+      path: '/debounce',
+      name: 'debounce',
+      component: () => import(/* webpackChunkName: "about" */ '~views/test/index')
+    },
+    {
       path: '/router-root/:id',
       name: 'router-root',
       component: () => import(/* webpackChunkName: "about" */ '../views/__vue-router/routerRoot'),
