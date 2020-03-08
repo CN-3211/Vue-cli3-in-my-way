@@ -34,7 +34,7 @@ export default {
     }
     var outObj = {
       age: 17,
-      name: 'shapiao'
+      name: 'piao'
     }
     console.log('call :', obj.myFun.call(outObj, '成都', '上海'));
     console.log('apply :', obj.myFun.apply(outObj, ['成都', '上海']));

@@ -65,8 +65,23 @@ export function myReduce(fn, init) {
 // let aaa = reduceArr.myReduce(plusFn, 10); 
 // console.log('aaa :', aaa); // 31
 
+// async await捕获异常
 export function to(promise) {
   return promise.then(data => {
     return [null, data];
   }).catch(err => [err])
+}
+export function wrapFunction(func, time) {
+  let that, args;
+  console.log('this2 :', this);
+  return function() {
+    that = this;
+    args = arguments;
+    let obj = { a: 1 };
+    console.log('that :', that);
+    let result = setTimeout(function() {
+      func.call(this)
+    }, 1000);
+    return result
+  }
 }
