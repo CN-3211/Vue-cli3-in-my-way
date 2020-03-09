@@ -77,10 +77,10 @@ export function wrapFunction(func, time) {
   return function() {
     that = this;
     args = arguments;
-    let obj = { a: 1 };
     console.log('that :', that);
+    console.log('args', args);
     let result = setTimeout(function() {
-      func.call(this)
+      func.apply(that, args)
     }, 1000);
     return result
   }
