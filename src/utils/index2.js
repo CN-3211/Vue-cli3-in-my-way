@@ -71,17 +71,31 @@ export function to(promise) {
     return [null, data];
   }).catch(err => [err])
 }
-export function wrapFunction(func, time) {
-  let that, args;
-  console.log('this2 :', this);
+
+// 防抖---debounce,第一个func参数只能是function声明的,不能是箭头函数
+export function wrapFunction(func, timeout) {
+  let that, args, isOver, result, tmpTime;
+  function delay() {
+    let lastTime = +new Date() - tmpTime;
+    console.log('lastTime', lastTime);
+    if(lastTime < timeout && lastTime > 0) {
+      isOver = setTimeout(delay, timeout);
+    } else {
+      isOver = null;
+      result = func.apply(that, args);
+    }
+  }
   return function() {
     that = this;
+    // arguments可以回去全部参数
     args = arguments;
-    console.log('that :', that);
-    console.log('args', args);
-    let result = setTimeout(function() {
-      func.apply(that, args)
-    }, 1000);
+    console.log('args',args);
+    tmpTime = +new Date();
+    if(!isOver) {
+      isOver = setTimeout(delay, timeout);
+    }
+    console.log('isOver',isOver);
+    console.log('result',result);
     return result
   }
 }
