@@ -17,7 +17,7 @@
     },
     methods: {
       onclick() {
-        this.$router.push('/router-root/:id/yellow')
+        this.$router.push('/router-root/yellow')
       }
     }
   };

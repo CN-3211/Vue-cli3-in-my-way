@@ -1,56 +1,52 @@
 <template>
   <div class="test">
-    <p>{{a}}</p>
-    <el-button @click="onClick(b)">点击我调用debounce</el-button>
-    <el-button type="text" @click="dialogVisible = true" >点击打开 Dialog</el-button>
-    <FunctionalDialog title="周神牛逼" tagName="el-dialog" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
-      <span>这是一段信息</span>
-    </FunctionalDialog>
+    <vc-viewer class="viewer" :animation="animation" :timeline="timeline" :camera.sync="camera" @ready="ready">
+      <vc-layer-imagery>
+        <vc-provider-imagery-supermap ref="imageryProvider" :url="url" @readyPromise="readyPromise"></vc-provider-imagery-supermap>
+      </vc-layer-imagery>
+    </vc-viewer>
   </div>
 </template>
 
 <script>
-  import { debounce } from '../utils/index';
-  import { wrapFunction } from '../utils/index2';
-  import FunctionalDialog from "./functionalDialog";
   export default {
-    name: 'test',
     data() {
       return {
-        a: 'piao',
-        b: 'paramsStr',
-        dialogVisible: false
+        // 左下角的圆形仪表盘
+        animation: false,
+        // 下方的时间轴
+        timeline: false,
+        camera: {
+          position: {
+            lng: 114.405511,
+            lat: 30.53104,
+            height: 100000
+          },
+          heading: 360,
+          pitch: -90,
+          roll: 0
+        },
+        url: 'https://www.supermapol.com/realspace/services/3D-dixingyingxiang/rest/realspace/datas/MosaicResult'
       }
     },
     methods: {
-      dialogClick() {
-        console.log('asd',123);
+      ready(cesiumInstance) {
+        const { Cesium, viewer } = cesiumInstance
+        this.cesiumInstance = cesiumInstance
       },
-      onClick: wrapFunction(function (parms) {
-        console.log('parms :', parms);
-        console.log('test页面下面的this :', this.a + parms);
-
-        return  this.a += '飘';
-       }, 1000),
-      handleClose(done) {
-        this.$confirm('确认关闭？')
-          .then(_ => {
-            done();
-          })
-          .catch(_ => {});
+      readyPromise() {
+        const { Cesium, viewer } = this.cesiumInstance
+        viewer.zoomTo(this.$refs.imageryProvider.providerContainer.imageryLayer)
       }
-    },
-    mounted() {
-      let aaa = setTimeout(() => {
-        console.log(1);}, 1000)
-      console.log('aaa',aaa);
-    },
-    components: {
-      FunctionalDialog
     }
   }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .test {
+    .viewer {
+      width: 100%;
+      height: 100%;
+    }
+  }
 </style>
