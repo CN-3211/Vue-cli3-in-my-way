@@ -153,18 +153,18 @@ export default new VueRouter({
         {
           path: 'cesium-viewer',
           name: 'cesium-viewer',
-          component: () => import(/* webpackChunkName: "about" */ '../views/cesium/cesiumViewer')
+          component: () => import(/* webpackChunkName: "cesiumViewer" */ '../views/cesium/cesiumViewer')
         },
         {
           path: 'cesium-imagery',
           name: 'cesium-imagery',
-          component: () => import(/* webpackChunkName: "about" */ '~views/cesium/cesiumImagery')
+          component: () => import(/* webpackChunkName: "cesiumImagery" */ '~views/cesium/cesiumImagery')
         },
-        // {
-        //   path: 'vcViewer2',
-        //   name: 'vc-viewer2',
-        //   component: () => import(/* webpackChunkName: "about" */ '../views/cesium/vcViewer2')
-        // }
+        {
+          path: 'ce-arcgis',
+          name: 'ce-arcgis',
+          component: () => import(/* webpackChunkName: "ceArcgis" */ '../views/cesium/ceArcgis')
+        }
       ]
     },
   ]
