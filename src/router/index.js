@@ -20,12 +20,13 @@ export default new VueRouter({
       component: Home
     },
     {
+      // 显示在url上,
+      // 注意带/默认是根路由，在子路由不能带斜杠
       path: '/about',
-      // 显示在url上
-      name: 'about',
       // 路由名称
-      component: () => import(/* webpackChunkName: "about" */ '~views/About.vue')
+      name: 'about',
       // 组件路径
+      component: () => import(/* webpackChunkName: "about" */ '~views/About.vue')
     },
     {
       path: '/todoList',
@@ -108,11 +109,6 @@ export default new VueRouter({
       component: () => import(/* webpackChunkName: "about" */ '~views/slotGroup/slotContainer')
     },
     {
-      path: '/functionalComp',
-      name: 'functionalComp',
-      component: () => import(/* webpackChunkName: "about" */ '~views/test/index')
-    },
-    {
       path: '/setAndget',
       name: 'setAndget',
       component: () => import(/* webpackChunkName: "about" */ '~views/setAndget')
@@ -123,12 +119,7 @@ export default new VueRouter({
       component: () => import(/* webpackChunkName: "about" */ '~views/test')
     },
     {
-      path: '/debounce',
-      name: 'debounce',
-      component: () => import(/* webpackChunkName: "about" */ '~views/test/index')
-    },
-    {
-      path: '/router-root/:id',
+      path: '/router-root',
       name: 'router-root',
       component: () => import(/* webpackChunkName: "about" */ '../views/__vue-router/routerRoot'),
       children: [
@@ -148,6 +139,33 @@ export default new VueRouter({
           component: () => import(/* webpackChunkName: "about" */ '../views/__vue-router/yellow')
         }
       ]
-    }
+    },
+    {
+      path: '/cesium-root',
+      name: 'cesium-root',
+      component: () => import(/* webpackChunkName: "about" */ '../views/cesium/root'),
+      children: [
+        {
+          path: '',
+          name: 'router-default',
+          component: () => import(/* webpackChunkName: "about" */ '../views/cesium/default')
+        },
+        {
+          path: 'cesium-viewer',
+          name: 'cesium-viewer',
+          component: () => import(/* webpackChunkName: "about" */ '../views/cesium/cesiumViewer')
+        },
+        {
+          path: 'cesium-imagery',
+          name: 'cesium-imagery',
+          component: () => import(/* webpackChunkName: "about" */ '~views/cesium/cesiumImagery')
+        },
+        // {
+        //   path: 'vcViewer2',
+        //   name: 'vc-viewer2',
+        //   component: () => import(/* webpackChunkName: "about" */ '../views/cesium/vcViewer2')
+        // }
+      ]
+    },
   ]
 })

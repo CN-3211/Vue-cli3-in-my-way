@@ -8,6 +8,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueCesium from 'vue-cesium'
 // import './registerServiceWorker'
 
 // 指令
@@ -24,6 +25,8 @@ import { to } from './utils/index2';
 
 Vue.prototype.to = to;
 Vue.config.productionTip = false
+
+Vue.use(VueCesium)
 
 new Vue({
   router,

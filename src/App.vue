@@ -30,7 +30,8 @@
         <el-col :span="6"><router-link to="/setAndget">setAndget</router-link></el-col>
         <el-col :span="6"><router-link to="/test">test</router-link></el-col>
         <el-col :span="6"><router-link to="/debounce">debounce</router-link></el-col>
-        <el-col :span="6"><router-link to="/router-root/testId">嵌套路由-根路由</router-link></el-col>
+        <el-col :span="6"><router-link to="/router-root">嵌套路由-根路由</router-link></el-col>
+        <el-col :span="6"><router-link to="/cesium-root">cesium-根路由</router-link></el-col>
       </el-row>
     </div>
     <transition name="fade" mode="out-in">
