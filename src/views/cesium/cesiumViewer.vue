@@ -1,22 +1,16 @@
 <template>
-  <div class="cesiumViewer">
-    <vc-viewer class="viewer" :animation="animation" :timeline="timeline" :camera.sync="camera" @ready="ready">
-      <vc-layer-imagery>
-        <vc-provider-imagery-supermap ref="imageryProvider" :url="url" @readyPromise="readyPromise"></vc-provider-imagery-supermap>
-      </vc-layer-imagery>
-    </vc-viewer>
-  </div>
+  <vc-viewer class="cesiumViewer" :animation="animation" :timeline="timeline" :camera.sync="camera" @ready="ready">
+    <vc-layer-imagery>
+      <vc-provider-imagery-openstreetmap></vc-provider-imagery-openstreetmap>
+    </vc-layer-imagery>
+  </vc-viewer>
 </template>
-
 <script>
   export default {
-      name: "cesiumViewer",
     data() {
       return {
-        // 左下角的圆形仪表盘
-        animation: false,
-        // 下方的时间轴
-        timeline: false,
+        animation: true,
+        timeline: true,
         camera: {
           position: {
             lng: 114.405511,
@@ -26,28 +20,37 @@
           heading: 360,
           pitch: -90,
           roll: 0
-        },
-        url: 'https://www.supermapol.com/realspace/services/3D-dixingyingxiang/rest/realspace/datas/MosaicResult'
+        }
       }
     },
     methods: {
       ready(cesiumInstance) {
         const { Cesium, viewer } = cesiumInstance
-        this.cesiumInstance = cesiumInstance
-      },
-      readyPromise() {
-        const { Cesium, viewer } = this.cesiumInstance
-        viewer.zoomTo(this.$refs.imageryProvider.providerContainer.imageryLayer)
+        viewer.entities.add({
+          id: '武汉欢迎你',
+          position: Cesium.Cartesian3.fromDegrees(114.405511, 30.53104, 100),
+          billboard: new Cesium.BillboardGraphics({
+            image: 'https://zouyaoji.top/vue-cesium/favicon.png',
+            scale: 0.1
+          }),
+          label: new Cesium.LabelGraphics({
+            text: 'Hello Word',
+            fillColor: Cesium.Color.GOLD,
+            font: '24px sans-serif',
+            horizontalOrigin: 1,
+            outlineColor: new Cesium.Color(0, 0, 0, 1),
+            outlineWidth: 2,
+            pixelOffset: new Cesium.Cartesian2(17, -5),
+            style: Cesium.LabelStyle.FILL
+          })
+        })
       }
     }
   }
 </script>
-
-<style lang="scss" scoped>
+<style>
   .cesiumViewer {
-    .viewer {
-      width: 100%;
-      height: 100%;
-    }
+    width: 100%;
+    height: 400px;
   }
 </style>
